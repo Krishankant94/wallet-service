@@ -1,8 +1,11 @@
 const express = require('express');
 const connectToDB = require('./db/connect');
+const cors = require('cors');
 require('dotenv').config();
 const walletRouter = require('./routes/walletRoutes');
 const app = express();
+
+app.use(cors());
 
 //Middlewares
 app.use(express.json())
